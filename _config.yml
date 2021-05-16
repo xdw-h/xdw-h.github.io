@@ -104,4 +104,4 @@ theme: next
 deploy:
   type: git
   repository: https://github.com/xdw-h/xdw-h.github.io.git
-  branch: main
+  branch: master
