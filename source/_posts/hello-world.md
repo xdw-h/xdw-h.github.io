@@ -1,0 +1,30 @@
+---
+title: Personal Plog
+---
+##博客编辑常用工具：
+1.奥森图标（[Font Awesome](https://www.thinkcmf.com/font_awesome.html)）提供丰富的矢量字体图标—通过CSS可以任意控制所有图标的大小 ，颜色，阴影。
+2.[SWIG](http://www.swig.org/exec.html)是一个接口编译器，用于将用C和C ++编写的程序与脚本语言（例如Perl，Python，Ruby和Tcl）连接起来。它通过获取C / C ++头文件中的声明并使用它们来生成脚本语言访问基础C / C ++代码所需的包装器代码来工作。此外，SWIG提供了各种自定义功能，可让您定制包装过程以适合您的应用程序。
+3.[hexo](https://hexo.io/zh-cn/docs/commands.html)常用指令:
+（1）新建一篇博客
+``` bash
+$ hexo new "My New Post"
+```
+（2）生成静态文件
+``` bash
+$ hexo generate
+//
+$ hexo g
+```
+（3）本地运行
+``` bash
+$ hexo server
+//
+$ hexo s
+```
+（4）在github上运行
+``` bash
+$ hexo deploy
+//
+$ hexo d
+```
+例：[author blog](https://xdw-h.github.io/)
