@@ -116,8 +116,8 @@ live2d:
   model:
     use: live2d-widget-model-z16  #选择哪种模型
   display: #放置位置和大小
-    position: right
-    width: 400
-    height: 800
+    position: left
+    width: 300
+    height: 600
   mobile:
     show: true #是否在手机端显示
