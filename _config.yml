@@ -67,7 +67,10 @@ index_generator:
 
 # Category & Tag
 default_category: uncategorized
-category_map:
+category_map:	
+  学习笔记: study
+	工作笔记: work
+	生活笔记: life
 tag_map:
 
 # Metadata elements
