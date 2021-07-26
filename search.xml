@@ -59,15 +59,15 @@
     
     <entry>
       <title>博客编辑常用工具</title>
-      <link href="2021/05/02/hello-world/"/>
-      <url>2021/05/02/hello-world/</url>
+      <link href="2021/05/02/0/"/>
+      <url>2021/05/02/0/</url>
       
         <content type="html"><![CDATA[<ol><li>奥森图标（<a href="https://www.thinkcmf.com/font_awesome.html">Font Awesome</a>）提供丰富的矢量字体图标—通过CSS可以任意控制所有图标的大小 ，颜色，阴影。</li><li><a href="http://www.swig.org/exec.html">SWIG</a>是一个接口编译器，用于将用C和C ++编写的程序与脚本语言（例如Perl，Python，Ruby和Tcl）连接起来。它通过获取C / C ++头文件中的声明并使用它们来生成脚本语言访问基础C / C ++代码所需的包装器代码来工作。此外，SWIG提供了各种自定义功能，可让您定制包装过程以适合您的应用程序。<span id="more"></span></li><li><a href="https://hexo.io/zh-cn/docs/commands.html">hexo</a>常用指令:<br>（1）新建一篇博客</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>（2）生成静态文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">//</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure><p>（3）本地运行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">//</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure><p>（4）在github上运行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">//</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure><p>例：<a href="https://xdw-h.github.io/">author blog</a></p>]]></content>
       
       
       <categories>
           
-          <category> hexo博客 </category>
+          <category> 工具使用 </category>
           
       </categories>
       
