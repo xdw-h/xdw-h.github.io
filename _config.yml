@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Blog
+title: David Xue
 subtitle: ''
 description: Tough times never last, but tough people do.
 keywords:
@@ -68,9 +68,6 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:	
-  学习笔记: study
-	工作笔记: work
-	生活笔记: life
 tag_map:
 
 # Metadata elements
