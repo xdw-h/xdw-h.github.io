@@ -13,8 +13,9 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: https://xdw-h.github.io/
+root: //
+permalink: /:year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -106,18 +107,24 @@ deploy:
   repository: https://github.com/xdw-h/xdw-h.github.io.git
   branch: master
 
-# live2d:
-#   enable: true
-#   scriptFrom: local
-#   pluginRootPath: live2dw/
-#   pluginJsPath: lib/
-#   pluginModelPath: assets/
-#   tagMode: false
-#   model:
-#     use: live2d-widget-model-z16  #选择哪种模型
-#   display: #放置位置和大小
-#     position: left
-#     width: 300
-#     height: 500
-#   mobile:
-#     show: true #是否在手机端显示
+search:
+  path: search.xml   #在public目录的根目录下生成search.xml 文件，用于存储网站文章的文字数据.
+  field: post
+  format: html
+  limit: 10000
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  model:
+    use: live2d-widget-model-hijiki  #选择哪种模型
+  display: #放置位置和大小
+    position: right
+    width: 300
+    height: 500
+  mobile:
+    show: false #是否在手机端显示
