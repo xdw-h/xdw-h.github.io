@@ -190,6 +190,114 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/2021/08/04/30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="David Xue">
+      <meta itemprop="description" content="Tough times never last, but tough people do.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Xue">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/04/30/" class="post-title-link" itemprop="url">hexo next主题增加搜索功能</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-04 17:46:24 / 修改时间：17:55:06" itemprop="dateCreated datePublished" datetime="2021-08-04T17:46:24+08:00">2021-08-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/08/04/30/" class="post-meta-item leancloud_visitors" data-flag-title="hexo next主题增加搜索功能" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/2021/08/04/30/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/04/30/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="hexo-增加搜索功能"><a href="#hexo-增加搜索功能" class="headerlink" title="hexo 增加搜索功能"></a>hexo 增加搜索功能</h3><h4 id><a href="#" class="headerlink" title></a></h4><p>首先进入hexo工程目录，输入</p>
+<blockquote>
+<p>npm install hexo-generator-searchdb –save</p>
+</blockquote>
+<p>然后进入themes\next_config.yml，搜索 Local search</p>
+<p>设置</p>
+<blockquote>
+<p>local_search:<br>enable: true</p>
+</blockquote>
+<p>进入根目录的_config.yml，增加</p>
+<blockquote>
+<p>search:<br>path: search.xml   #在public目录的根目录下生成search.xml 文件，用于存储网站文章的文字数据.<br>field: post<br>format: html<br>limit: 10000</p>
+</blockquote>
+<p>同时在根目录的_config.yml搜索URL，将permalink的值最前面加上/, 表示每次跳转的页面都是相对于根路径，就不会出现地址重复导致404的问题</p>
+<blockquote>
+<p>permalink: /:year/:month/:day/:title/ </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/2021/08/04/29/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -792,105 +900,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/2021/08/04/6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="David Xue">
-      <meta itemprop="description" content="Tough times never last, but tough people do.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David Xue">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/04/6/" class="post-title-link" itemprop="url">Promise 对象</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-04 00:58:50" itemprop="dateCreated datePublished" datetime="2021-08-04T00:58:50+08:00">2021-08-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/08/04/6/" class="post-meta-item leancloud_visitors" data-flag-title="Promise 对象" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/2021/08/04/6/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/04/6/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a>Promise 对象</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>是异步编程的一种解决方案。</p>
-<p>从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/04/6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/2021/08/04/7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -990,7 +999,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/2021/08/04/17/">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/2021/08/04/6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
@@ -1004,7 +1013,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/04/17/" class="post-title-link" itemprop="url">webpack如何提高构建速度</a>
+            <a href="/2021/08/04/6/" class="post-title-link" itemprop="url">Promise 对象</a>
         </h2>
 
         <div class="post-meta">
@@ -1029,7 +1038,7 @@
             </span>
 
           
-            <span id="/2021/08/04/17/" class="post-meta-item leancloud_visitors" data-flag-title="webpack如何提高构建速度" title="阅读次数">
+            <span id="/2021/08/04/6/" class="post-meta-item leancloud_visitors" data-flag-title="Promise 对象" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -1045,8 +1054,8 @@
 
       <span class="post-meta-item-text">评论：</span>
     
-    <a title="valine" href="/2021/08/04/17/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/04/17/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/08/04/6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/04/6/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1061,15 +1070,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="webpack如何提高构建速度"><a href="#webpack如何提高构建速度" class="headerlink" title="webpack如何提高构建速度"></a>webpack如何提高构建速度</h3><ol>
-<li>多入口情况下，使用CommonsChunkPlugin来提取公共代码；</li>
-<li>通过externals配置来提取常用库;</li>
-<li>利用DllPlugin和DllReferencePlugin预编译资源模块通过DllPlugin来对那些我们引用但是绝对不会修改的npm包来进行预编译，再通过DllReferencePlugin将预编译的模块加载进来;</li>
-<li>使用Happypack 实现多线程加速编译;</li>
-<li>使用webpack-uglify-paralle来提升uglifyPlugin的压缩速度。 原理上webpack-uglify-parallel采用了多核并行压缩来提升压缩速度;</li>
-<li>使用Tree-shaking和Scope Hoisting来剔除多余代码.</li>
-</ol>
-
+          <h3 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a>Promise 对象</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>是异步编程的一种解决方案。</p>
+<p>从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/04/6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1177,7 +1187,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1245,7 +1255,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1302,7 +1312,7 @@
   </div>
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">博客全站共19.5k字</span>
+    <span class="post-count">博客全站共19.7k字</span>
   </div>
 
 
@@ -1397,5 +1407,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":300,"height":500},"mobile":{"show":false},"log":false});</script></body>
 </html>
