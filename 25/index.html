@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/libar/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xdw-h.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","Available values":"valine","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="使用git分支管理hexo博客源码背景使用hexo写博客的流程通常是：  通过hexo new post_name命令，会自动在source&#x2F;_post目录下生成一个待写的post_name.md文件； 编写完该md文件后，用hexo generate编译生成对应的HTML文件； 发布之前，可以用hexo s本地预览，然后通过hexo deploy发布到远程仓库的master分支，然后你的个人站点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用git分支管理hexo博客源码">
+<meta property="og:url" content="https://xdw-h.github.io/25/index.html">
+<meta property="og:site_name" content="David Xue">
+<meta property="og:description" content="使用git分支管理hexo博客源码背景使用hexo写博客的流程通常是：  通过hexo new post_name命令，会自动在source&#x2F;_post目录下生成一个待写的post_name.md文件； 编写完该md文件后，用hexo generate编译生成对应的HTML文件； 发布之前，可以用hexo s本地预览，然后通过hexo deploy发布到远程仓库的master分支，然后你的个人站点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xdw-h.github.io/25/25-1.png">
+<meta property="og:image" content="https://xdw-h.github.io/25/25-2.png">
+<meta property="article:published_time" content="2021-08-03T16:48:29.193Z">
+<meta property="article:modified_time" content="2021-08-04T15:39:21.649Z">
+<meta property="article:author" content="David Xue">
+<meta property="article:tag" content="代码管理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xdw-h.github.io/25/25-1.png">
+
+<link rel="canonical" href="https://xdw-h.github.io/25/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>使用git分支管理hexo博客源码 | David Xue</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">David Xue</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/25/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="David Xue">
+      <meta itemprop="description" content="Tough times never last, but tough people do.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Xue">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用git分支管理hexo博客源码
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-04 00:48:29 / 修改时间：23:39:21" itemprop="dateCreated datePublished" datetime="2021-08-04T00:48:29+08:00">2021-08-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/25/" class="post-meta-item leancloud_visitors" data-flag-title="使用git分支管理hexo博客源码" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/25/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/25/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="使用git分支管理hexo博客源码"><a href="#使用git分支管理hexo博客源码" class="headerlink" title="使用git分支管理hexo博客源码"></a>使用git分支管理hexo博客源码</h3><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>使用hexo写博客的流程通常是：</p>
+<ol>
+<li>通过hexo new post_name命令，会自动在source/_post目录下生成一个待写的post_name.md文件；</li>
+<li>编写完该md文件后，用hexo generate编译生成对应的HTML文件；</li>
+<li>发布之前，可以用hexo s本地预览，然后通过hexo deploy发布到远程仓库的master分支，然后你的个人站点就能看到刚才新加的文章了。</li>
+</ol>
+<p>然而，远程仓库只会保存hexo发布后的静态HTML文件，博客md源文件、主题配置等还在本地，一旦电脑磁盘坏了或者换了电脑，就无法在之前仓库的基础上继续写博客。</p>
+<span id="more"></span>
+
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><h5 id="新建git分支"><a href="#新建git分支" class="headerlink" title="新建git分支"></a>新建git分支</h5><p>Github Page要求使用master分支作为发布网站的源代码，我们只能用master分支来保存hexo生成的静态网页，所以可以新建一个dev分支来保存源代码。</p>
+<p>如图在红框位置输入需要新建的分支名就会提示新建分支，此处我已经新建，故直接显示dev分支。</p>
+<p><img src="/25/25-1.png" alt="&#39;新建分支&#39;"></p>
+<p>此时建立的分支是从master分支克隆过来的，因而master中已有的public等deploy生成的文件也会一起带过来，这些都不算是博客源文件。可以先在本地把它删掉，然后提交推送到GitHub上的dev分支</p>
+<blockquote>
+<p>git add .<br>git commit -m ‘删除public文件’<br>git push origin dev</p>
+</blockquote>
+<h5 id="更改仓库的默认分支"><a href="#更改仓库的默认分支" class="headerlink" title="更改仓库的默认分支"></a>更改仓库的默认分支</h5><p>github上的仓库初始都会有个master分支，也就是默认分支。<br>对于一个仓库project_name，当我们通过</p>
+<blockquote>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/sherlockyb/project_name.git">https://github.com/sherlockyb/project_name.git</a></p>
+</blockquote>
+<p>下载代码时，实际拉取的是默认分支master对应的代码。<br>而我们用hexo写博客时，通常是与md源文件打交道，对于deploy生成的master分支代码并不需要我们关注，因此可将仓库的默认分支改为保存源码的dev分支，这样通过git clone拉取的就是dev分支代码了。</p>
+<p>在仓库的主页面，通过Settings -&gt; Branchs，可以看到Default branch的Tab，显示的默认分支是master，可以勾选dev，然后update即可将默认分支设置为dev，如下图：</p>
+<p><img src="/25/25-2.png" alt="&#39;更改仓库的默认分支&#39;"></p>
+<h5 id="推送博客源码"><a href="#推送博客源码" class="headerlink" title="推送博客源码"></a>推送博客源码</h5><p>将本地的md源文件、站点配置文件等推送到source分支。</p>
+<p>因为我们只需要保留博客源码，其他无关的文件并不希望推送，需要确保配好了.gitignore文件，通常如下：</p>
+<blockquote>
+<p>.DS_StoreThumbs.dbdb.json*.lognode_modules/public/.deploy*/</p>
+</blockquote>
+<p>然后执行:</p>
+<blockquote>
+<p>git add .<br>git commit -m ‘新增博客’<br>git push origin dev</p>
+</blockquote>
+<p>将源代码修改已经新增的博客md上传到dev分支</p>
+<h5 id="新环境"><a href="#新环境" class="headerlink" title="新环境"></a>新环境</h5><p>假设我们换电脑了，要在新环境继续在原有仓库基础上撸文章，此时通过git clone将博客源码拉到本地，然后安装、初始化hexo就能搞定。</p>
+<p>转发：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_29164081/article/details/112712581">https://blog.csdn.net/weixin_29164081/article/details/112712581</a></p>
+<p>git push –set-upstream origin dev<br>git pull –rebase origin dev<br>git remote set-url origin <a target="_blank" rel="noopener" href="https://github.com/xdw-h/xdw-h.github.io.git">https://github.com/xdw-h/xdw-h.github.io.git</a><br>git remote add origin <a target="_blank" rel="noopener" href="https://github.com/xdw-h/xdw-h.github.io.git">https://github.com/xdw-h/xdw-h.github.io.git</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>David Xue
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://xdw-h.github.io/25/" title="使用git分支管理hexo博客源码">https://xdw-h.github.io/25/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/" rel="tag"># 代码管理</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/26/" rel="prev" title="reflow(回流)和repaint(重绘)">
+      <i class="fa fa-chevron-left"></i> reflow(回流)和repaint(重绘)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/23/" rel="next" title="svn 常用指令">
+      svn 常用指令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86hexo%E5%8D%9A%E5%AE%A2%E6%BA%90%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">使用git分支管理hexo博客源码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAgit%E5%88%86%E6%94%AF"><span class="nav-number">1.2.1.</span> <span class="nav-text">新建git分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E4%BB%93%E5%BA%93%E7%9A%84%E9%BB%98%E8%AE%A4%E5%88%86%E6%94%AF"><span class="nav-number">1.2.2.</span> <span class="nav-text">更改仓库的默认分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E5%8D%9A%E5%AE%A2%E6%BA%90%E7%A0%81"><span class="nav-number">1.2.3.</span> <span class="nav-text">推送博客源码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B0%E7%8E%AF%E5%A2%83"><span class="nav-number">1.2.4.</span> <span class="nav-text">新环境</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="David Xue"
+      src="/images/%E5%A4%B4%E5%83%8F.jpg">
+  <p class="site-author-name" itemprop="name">David Xue</p>
+  <div class="site-description" itemprop="description">Tough times never last, but tough people do.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1384450197&auto=0&height=66"></iframe>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-address-book"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Xue</span>
+</div>
+  <div>
+    <span id="busuanzi_container_site_uv">
+      本站访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  </div>
+  <div class="theme-info">
+    <div class="powered-by"></div>
+    <span class="post-count">博客全站共19.7k字</span>
+  </div>
+
+
+        
+<div class="">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,0' opacity='0.5' zIndex='-1' count='150' src="/libar/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/libar/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/libar/velocity/velocity.min.js"></script>
+  <script src="/libar/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : 'E1GjVgN9z4qEHa6gYtbE6lqd-gzGzoHsz',
+      appKey     : 'pomKDnq0B2v43hxQaJJ5shDB',
+      placeholder: "有兴趣的可以评论下哦",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":300,"height":500},"mobile":{"show":false},"log":false});</script></body>
+</html>
