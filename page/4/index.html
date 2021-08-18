@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/36/">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/16/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
@@ -204,7 +204,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/36/" class="post-title-link" itemprop="url">输入URL到构建全流程的经历</a>
+            <a href="/16/" class="post-title-link" itemprop="url">webpack构建原理分析</a>
         </h2>
 
         <div class="post-meta">
@@ -218,6 +218,13 @@
 
               <time title="创建时间：2021-08-10 20:22:29" itemprop="dateCreated datePublished" datetime="2021-08-10T20:22:29+08:00">2021-08-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:11:34" itemprop="dateModified" datetime="2021-08-18T23:11:34+08:00">2021-08-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -229,7 +236,7 @@
             </span>
 
           
-            <span id="/36/" class="post-meta-item leancloud_visitors" data-flag-title="输入URL到构建全流程的经历" title="阅读次数">
+            <span id="/16/" class="post-meta-item leancloud_visitors" data-flag-title="webpack构建原理分析" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -245,8 +252,8 @@
 
       <span class="post-meta-item-text">评论：</span>
     
-    <a title="valine" href="/36/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/36/" itemprop="commentCount"></span>
+    <a title="valine" href="/16/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/16/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -261,17 +268,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="输入URL到构建全流程的经历"><a href="#输入URL到构建全流程的经历" class="headerlink" title="输入URL到构建全流程的经历"></a>输入URL到构建全流程的经历</h3><ol>
-<li>在用户输入URL后，浏览器会自动检查地址完整性，补全漏写的协议等;</li>
-<li>通过DNS把域名解析成服务器IP地址，得到地址后，客户端和服务端建立TCP连接，进行三次握手；</li>
-<li>客户端会通过IP地址向服务端发送一个http请求，服务端在80端口接收到该请求后，返回HTTP报文给到浏览器;</li>
-<li>浏览器解析报文内容，并继续搜索页面是否还有其它请求，有则继续通过IP地址向服务端发送http请求；</li>
-<li>在接受到服务器返回的内容后，浏览器解析渲染页面；</li>
-<li>所有请求都完成后，客户端和服务端断开连接，进行四次挥手。</li>
+          <h3 id="webpack构建原理分析"><a href="#webpack构建原理分析" class="headerlink" title="webpack构建原理分析"></a>webpack构建原理分析</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ol>
+<li>entry：一个可执行模块或者库的入口。</li>
+<li>chunk：多个文件组成一个代码块。可以将可执行的模块和他所依赖的模块组合成一个chunk，这是打包。</li>
+<li>loader：文件转换器。例如把es6转为es5，scss转为css等</li>
+<li>plugin：扩展webpack功能的插件。在webpack构建的生命周期节点上加入扩展hook，添加功能。</li>
 </ol>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/36/#more" rel="contents">
+              <a class="btn" href="/16/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -295,7 +300,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/4/">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
@@ -309,7 +314,112 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/4/" class="post-title-link" itemprop="url">async函数原理及使用方法</a>
+            <a href="/17/" class="post-title-link" itemprop="url">webpack如何提高构建速度</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-10 20:22:29" itemprop="dateCreated datePublished" datetime="2021-08-10T20:22:29+08:00">2021-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:11:38" itemprop="dateModified" datetime="2021-08-18T23:11:38+08:00">2021-08-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/17/" class="post-meta-item leancloud_visitors" data-flag-title="webpack如何提高构建速度" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/17/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/17/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="webpack如何提高构建速度"><a href="#webpack如何提高构建速度" class="headerlink" title="webpack如何提高构建速度"></a>webpack如何提高构建速度</h3><ol>
+<li>多入口情况下，使用CommonsChunkPlugin来提取公共代码；</li>
+<li>通过externals配置来提取常用库;</li>
+<li>利用DllPlugin和DllReferencePlugin预编译资源模块通过DllPlugin来对那些我们引用但是绝对不会修改的npm包来进行预编译，再通过DllReferencePlugin将预编译的模块加载进来;</li>
+<li>使用Happypack 实现多线程加速编译;</li>
+<li>使用webpack-uglify-paralle来提升uglifyPlugin的压缩速度。 原理上webpack-uglify-parallel采用了多核并行压缩来提升压缩速度;</li>
+<li>使用Tree-shaking和Scope Hoisting来剔除多余代码.</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="David Xue">
+      <meta itemprop="description" content="Tough times never last, but tough people do.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Xue">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/18/" class="post-title-link" itemprop="url">Tree-shaking</a>
         </h2>
 
         <div class="post-meta">
@@ -334,7 +444,7 @@
             </span>
 
           
-            <span id="/4/" class="post-meta-item leancloud_visitors" data-flag-title="async函数原理及使用方法" title="阅读次数">
+            <span id="/18/" class="post-meta-item leancloud_visitors" data-flag-title="Tree-shaking" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -350,8 +460,8 @@
 
       <span class="post-meta-item-text">评论：</span>
     
-    <a title="valine" href="/4/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/4/" itemprop="commentCount"></span>
+    <a title="valine" href="/18/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/18/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -366,12 +476,205 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="async函数原理及使用方法"><a href="#async函数原理及使用方法" class="headerlink" title="async函数原理及使用方法"></a>async函数原理及使用方法</h3><blockquote>
-<p>async 函数是 Generator 函数的语法糖，async 函数的实现原理，就是将 <a href="/5/" title="Generator函数">Generator函数</a>和自动执行器，包装在一个函数里。</p>
+          <h3 id="Tree-shaking"><a href="#Tree-shaking" class="headerlink" title="Tree-shaking"></a>Tree-shaking</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="David Xue">
+      <meta itemprop="description" content="Tough times never last, but tough people do.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Xue">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/19/" class="post-title-link" itemprop="url">git和svn</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-10 20:22:29" itemprop="dateCreated datePublished" datetime="2021-08-10T20:22:29+08:00">2021-08-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/19/" class="post-meta-item leancloud_visitors" data-flag-title="git和svn" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/19/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/19/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="git和svn"><a href="#git和svn" class="headerlink" title="git和svn"></a>git和svn</h3><h4 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h4><ol>
+<li>SVN（Subversion）是集中式管理的版本控制器，而Git是分布式管理的版本控制器！这是两者之间最核心的区别。</li>
+<li>SVN只有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。</li>
+<li>Git每一个终端都是一个仓库，客户端并不只提取最新版本的文件快照，而是把原始的代码仓库完整地镜像下来。每一次的提取操作，实际上都是一次对代码仓库的完整备份。</li>
+<li>Git不仅仅是个版本控制系统，它也是个内容管理系统（CMS），工作管理系统等。如果你是一个具有使用SVN背景的人，你需要做一定的思想转换，来适应Git提供的一些概念和特征。</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/19/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="David Xue">
+      <meta itemprop="description" content="Tough times never last, but tough people do.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Xue">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2/" class="post-title-link" itemprop="url">函数柯里化</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-10 20:22:29" itemprop="dateCreated datePublished" datetime="2021-08-10T20:22:29+08:00">2021-08-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2/" class="post-meta-item leancloud_visitors" data-flag-title="函数柯里化" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h3><blockquote>
+<p>接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。</p>
 </blockquote>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/4/#more" rel="contents">
+              <a class="btn" href="/2/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -395,7 +698,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/37/">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
@@ -409,7 +712,104 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/37/" class="post-title-link" itemprop="url">HTTP缓存机制</a>
+            <a href="/20/" class="post-title-link" itemprop="url">webpack-dev-server解决跨域</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-10 20:22:29" itemprop="dateCreated datePublished" datetime="2021-08-10T20:22:29+08:00">2021-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:11:46" itemprop="dateModified" datetime="2021-08-18T23:11:46+08:00">2021-08-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/20/" class="post-meta-item leancloud_visitors" data-flag-title="webpack-dev-server解决跨域" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/20/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/20/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="webpack-dev-server解决跨域"><a href="#webpack-dev-server解决跨域" class="headerlink" title="webpack-dev-server解决跨域"></a>webpack-dev-server解决跨域</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="David Xue">
+      <meta itemprop="description" content="Tough times never last, but tough people do.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Xue">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/21/" class="post-title-link" itemprop="url">vue中mixins的使用方法和注意点</a>
         </h2>
 
         <div class="post-meta">
@@ -434,7 +834,7 @@
             </span>
 
           
-            <span id="/37/" class="post-meta-item leancloud_visitors" data-flag-title="HTTP缓存机制" title="阅读次数">
+            <span id="/21/" class="post-meta-item leancloud_visitors" data-flag-title="vue中mixins的使用方法和注意点" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -450,8 +850,8 @@
 
       <span class="post-meta-item-text">评论：</span>
     
-    <a title="valine" href="/37/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/37/" itemprop="commentCount"></span>
+    <a title="valine" href="/21/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/21/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -466,12 +866,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="HTTP缓存机制"><a href="#HTTP缓存机制" class="headerlink" title="HTTP缓存机制"></a>HTTP缓存机制</h3><ol>
-<li>HTTP缓存机制：HTTP缓存即是浏览器第一次向一个服务器发起HTTP请求后，服务器会返回请求的资源，并且在响应头中添加一些有关缓存的字段如：cache-control，expires，last-modifed，ETag，Date等，之后浏览器再向该服务器请求资源就可以视情况使用强缓存和协商缓存。</li>
-</ol>
+          <h3 id="vue中mixins的使用方法和注意点"><a href="#vue中mixins的使用方法和注意点" class="headerlink" title="vue中mixins的使用方法和注意点"></a>vue中mixins的使用方法和注意点</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>混入 (mixins)： 是一种分发 Vue 组件中可复用功能的非常灵活的方式。混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被混入该组件本身的选项。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/37/#more" rel="contents">
+              <a class="btn" href="/21/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -495,7 +893,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/40/">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
@@ -509,7 +907,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/40/" class="post-title-link" itemprop="url">TCP与UDP区别及相关特性</a>
+            <a href="/22/" class="post-title-link" itemprop="url">git 常用指令</a>
         </h2>
 
         <div class="post-meta">
@@ -534,7 +932,7 @@
             </span>
 
           
-            <span id="/40/" class="post-meta-item leancloud_visitors" data-flag-title="TCP与UDP区别及相关特性" title="阅读次数">
+            <span id="/22/" class="post-meta-item leancloud_visitors" data-flag-title="git 常用指令" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -550,8 +948,8 @@
 
       <span class="post-meta-item-text">评论：</span>
     
-    <a title="valine" href="/40/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/40/" itemprop="commentCount"></span>
+    <a title="valine" href="/22/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/22/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -566,195 +964,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/41/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="David Xue">
-      <meta itemprop="description" content="Tough times never last, but tough people do.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David Xue">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/41/" class="post-title-link" itemprop="url">TCP建立后包含多少HTTP，以及相关衍生的概念</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-10 20:22:29" itemprop="dateCreated datePublished" datetime="2021-08-10T20:22:29+08:00">2021-08-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/41/" class="post-meta-item leancloud_visitors" data-flag-title="TCP建立后包含多少HTTP，以及相关衍生的概念" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/41/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/41/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="David Xue">
-      <meta itemprop="description" content="Tough times never last, but tough people do.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David Xue">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/5/" class="post-title-link" itemprop="url">ES6 Generator 函数</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-10 20:22:29" itemprop="dateCreated datePublished" datetime="2021-08-10T20:22:29+08:00">2021-08-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/5/" class="post-meta-item leancloud_visitors" data-flag-title="ES6 Generator 函数" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/5/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/5/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="ES6-Generator-函数"><a href="#ES6-Generator-函数" class="headerlink" title="ES6 Generator 函数"></a>ES6 Generator 函数</h3><p>ES6 新引入了 Generator 函数，可以通过 yield 关键字，把函数的执行流挂起，为改变执行流程提供了可能，从而为异步编程提供解决方案。</p>
-<h4 id="Generator-函数组成"><a href="#Generator-函数组成" class="headerlink" title="Generator 函数组成"></a>Generator 函数组成</h4><p>Generator 有两个区分于普通函数的部分：</p>
-<ol>
-<li>在 function 后面，函数名之前有个 * ；</li>
-<li>函数内部有 yield 表达式。</li>
-</ol>
+          <h3 id="git-常用指令"><a href="#git-常用指令" class="headerlink" title="git 常用指令"></a>git 常用指令</h3><h4 id="git-clone-命令"><a href="#git-clone-命令" class="headerlink" title="git clone 命令"></a>git clone 命令</h4><blockquote>
+<p>$ git clone <a target="_blank" rel="noopener" href="https://github.com/libgit2/libgit2">https://github.com/libgit2/libgit2</a></p>
+</blockquote>
+<p>这会在当前目录下创建一个名为 “libgit2” 的目录，并在这个目录下初始化一个 .git 文件夹， 从远程仓库拉取下所有数据放入 .git 文件夹，然后从中读取最新版本的文件的拷贝。 如果你进入到这个新建的 libgit2 文件夹，你会发现所有的项目文件已经在里面了，准备就绪等待后续的开发和使用。</p>
+<p>如果你想在克隆远程仓库的时候，自定义本地仓库的名字，你可以通过额外的参数指定新的目录名：</p>
+<blockquote>
+<p>$ git clone <a target="_blank" rel="noopener" href="https://github.com/libgit2/libgit2">https://github.com/libgit2/libgit2</a> mylibgit</p>
+</blockquote>
+<p>这会执行与上一条命令相同的操作，但目标目录名变为了 mylibgit。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/5/#more" rel="contents">
+              <a class="btn" href="/22/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -778,7 +999,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/39/">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/23/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
@@ -792,7 +1013,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/39/" class="post-title-link" itemprop="url">三次握手、四次挥手、websocket连接</a>
+            <a href="/23/" class="post-title-link" itemprop="url">svn 常用指令</a>
         </h2>
 
         <div class="post-meta">
@@ -817,7 +1038,7 @@
             </span>
 
           
-            <span id="/39/" class="post-meta-item leancloud_visitors" data-flag-title="三次握手、四次挥手、websocket连接" title="阅读次数">
+            <span id="/23/" class="post-meta-item leancloud_visitors" data-flag-title="svn 常用指令" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -833,8 +1054,8 @@
 
       <span class="post-meta-item-text">评论：</span>
     
-    <a title="valine" href="/39/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/39/" itemprop="commentCount"></span>
+    <a title="valine" href="/23/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/23/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -849,17 +1070,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="三次握手、四次挥手、websocket连接"><a href="#三次握手、四次挥手、websocket连接" class="headerlink" title="三次握手、四次挥手、websocket连接"></a>三次握手、四次挥手、websocket连接</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><ol>
-<li>第一次握手：起初两端都处于CLOSED关闭状态，Client将标志位SYN置为1，随机产生一个值seq=x，并将该数据包发送给Server，Client进入SYN-SENT状态，等待Server确认；</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/39/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h3 id="svn-常用指令"><a href="#svn-常用指令" class="headerlink" title="svn 常用指令"></a>svn 常用指令</h3>
       
     </div>
 
@@ -878,7 +1089,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/6/">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/24/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
@@ -892,7 +1103,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/6/" class="post-title-link" itemprop="url">Promise 对象</a>
+            <a href="/24/" class="post-title-link" itemprop="url">git的传输协议</a>
         </h2>
 
         <div class="post-meta">
@@ -917,7 +1128,7 @@
             </span>
 
           
-            <span id="/6/" class="post-meta-item leancloud_visitors" data-flag-title="Promise 对象" title="阅读次数">
+            <span id="/24/" class="post-meta-item leancloud_visitors" data-flag-title="git的传输协议" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -933,8 +1144,8 @@
 
       <span class="post-meta-item-text">评论：</span>
     
-    <a title="valine" href="/6/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/6/" itemprop="commentCount"></span>
+    <a title="valine" href="/24/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/24/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -949,207 +1160,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Promise-对象"><a href="#Promise-对象" class="headerlink" title="Promise 对象"></a>Promise 对象</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>是异步编程的一种解决方案。</p>
-<p>从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。</p>
+          <h3 id="git的传输协议"><a href="#git的传输协议" class="headerlink" title="git的传输协议"></a>git的传输协议</h3><h4 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h4><p>Git 可以使用四种主要的协议来传输数据：本地传输，SSH 协议，Git 协议和 HTTP 协议。下面分别介绍一下哪些情形应该使用（或避免使用）这些协议。</p>
+<p>值得注意的是，除了 HTTP 协议外，其他所有协议都要求在服务器端安装并运行 Git。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="David Xue">
-      <meta itemprop="description" content="Tough times never last, but tough people do.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David Xue">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/7/" class="post-title-link" itemprop="url">Promise 经典面试题</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-10 20:22:29" itemprop="dateCreated datePublished" datetime="2021-08-10T20:22:29+08:00">2021-08-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/7/" class="post-meta-item leancloud_visitors" data-flag-title="Promise 经典面试题" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/7/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="Promise-经典面试题"><a href="#Promise-经典面试题" class="headerlink" title="Promise 经典面试题"></a>Promise 经典面试题</h3><p>可复制题目到<a target="_blank" rel="noopener" href="https://www.sojson.com/runjs.html">js在线运行工具</a>看答案</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="David Xue">
-      <meta itemprop="description" content="Tough times never last, but tough people do.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David Xue">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/8/" class="post-title-link" itemprop="url">EventLoop</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-10 20:22:29" itemprop="dateCreated datePublished" datetime="2021-08-10T20:22:29+08:00">2021-08-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/8/" class="post-meta-item leancloud_visitors" data-flag-title="EventLoop" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/8/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="js的EventLoop"><a href="#js的EventLoop" class="headerlink" title="js的EventLoop"></a>js的EventLoop</h3><p>作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题。比如，假定JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？<br>所以，为了避免复杂性，从一诞生，JavaScript就是单线程.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/8/#more" rel="contents">
+              <a class="btn" href="/24/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1172,7 +1187,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1240,7 +1255,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1253,7 +1268,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1297,7 +1312,7 @@
   </div>
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">博客全站共33k字</span>
+    <span class="post-count">博客全站共42.2k字</span>
   </div>
 
 
