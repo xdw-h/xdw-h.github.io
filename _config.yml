@@ -128,3 +128,13 @@ live2d:
     height: 500
   mobile:
     show: false #是否在手机端显示
+
+# mermaid chart
+mermaid: ## mermaid url https://github.com/knsv/mermaid
+  enable: true  
+  # default true
+  version: "7.1.2"
+  # default v7.1.2
+  options:  
+  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+  #startOnload: true  // default true
