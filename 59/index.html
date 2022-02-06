@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://xdw-h.github.io/59/59-1.png">
 <meta property="og:image" content="https://xdw-h.github.io/59/59-2.png">
 <meta property="article:published_time" content="2021-09-04T13:49:51.943Z">
-<meta property="article:modified_time" content="2021-09-04T13:49:51.944Z">
+<meta property="article:modified_time" content="2022-02-06T15:18:45.209Z">
 <meta property="article:author" content="David Xue">
 <meta property="article:tag" content="面经">
 <meta property="article:tag" content="Vue">
@@ -225,6 +225,13 @@
 
               <time title="创建时间：2021-09-04 21:49:51" itemprop="dateCreated datePublished" datetime="2021-09-04T21:49:51+08:00">2021-09-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-06 23:18:45" itemprop="dateModified" datetime="2022-02-06T23:18:45+08:00">2022-02-06</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -276,9 +283,11 @@
 
       
         <h3 id="Vue组件间如何通信"><a href="#Vue组件间如何通信" class="headerlink" title="Vue组件间如何通信"></a>Vue组件间如何通信</h3><p>组件是 vue.js 最强大的功能之一，而组件实例的作用域是相互独立的，这就意味着不同组件之间的数据无法相互引用。一般来说，组件可以有以下几种关系：</p>
-<p><img src="/59/59-1.png" alt="&quot;59-1&quot;"></p>
+<p><img src="/59/59-1.png"></p>
 <p>如上图所示，A 和 B、B 和 C、B 和 D 都是父子关系，C 和 D 是兄弟关系，A 和 C 是隔代关系（可能隔多代）。</p>
 <p>vue 组件间通信的几种方式，如 props、$emit/$on、vuex、$parent / $children、$attrs/$listeners和 provide/inject。</p>
+<span id="more"></span>
+
 <h4 id="props-emit"><a href="#props-emit" class="headerlink" title="props/$emit"></a>props/$emit</h4><p>父组件 A 通过 props 的方式向子组件 B 传递，B to A 通过在 B 组件中 $emit, A 组件中 v-on 的方式实现。</p>
 <ol>
 <li>父组件向子组件传值</li>
@@ -306,7 +315,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;itany&quot;&gt;</span><br><span class="line">	&lt;my-a&gt;&lt;&#x2F;my-a&gt;</span><br><span class="line">	&lt;my-b&gt;&lt;&#x2F;my-b&gt;</span><br><span class="line">	&lt;my-c&gt;&lt;&#x2F;my-c&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;template id&#x3D;&quot;a&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h3&gt;A组件：&#123;&#123;name&#125;&#125;&lt;&#x2F;h3&gt;</span><br><span class="line">    &lt;button @click&#x3D;&quot;send&quot;&gt;将数据发送给C组件&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;template id&#x3D;&quot;b&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h3&gt;B组件：&#123;&#123;age&#125;&#125;&lt;&#x2F;h3&gt;</span><br><span class="line">    &lt;button @click&#x3D;&quot;send&quot;&gt;将数组发送给C组件&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;template id&#x3D;&quot;c&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h3&gt;C组件：&#123;&#123;name&#125;&#125;，&#123;&#123;age&#125;&#125;&lt;&#x2F;h3&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var Event &#x3D; new Vue();&#x2F;&#x2F;定义一个空的Vue实例</span><br><span class="line">var A &#x3D; &#123;</span><br><span class="line">	template: &#39;#a&#39;,</span><br><span class="line">	data() &#123;</span><br><span class="line">	  return &#123;</span><br><span class="line">	    name: &#39;tom&#39;</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods: &#123;</span><br><span class="line">	  send() &#123;</span><br><span class="line">	    Event.$emit(&#39;data-a&#39;, this.name);</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var B &#x3D; &#123;</span><br><span class="line">	template: &#39;#b&#39;,</span><br><span class="line">	data() &#123;</span><br><span class="line">	  return &#123;</span><br><span class="line">	    age: 20</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods: &#123;</span><br><span class="line">	  send() &#123;</span><br><span class="line">	    Event.$emit(&#39;data-b&#39;, this.age);</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var C &#x3D; &#123;</span><br><span class="line">	template: &#39;#c&#39;,</span><br><span class="line">	data() &#123;</span><br><span class="line">	  return &#123;</span><br><span class="line">	    name: &#39;&#39;,</span><br><span class="line">	    age: &quot;&quot;</span><br><span class="line">	  &#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	mounted() &#123;&#x2F;&#x2F;在模板编译完成后执行</span><br><span class="line">	 Event.$on(&#39;data-a&#39;,name &#x3D;&gt; &#123;</span><br><span class="line">	     this.name &#x3D; name;&#x2F;&#x2F;箭头函数内部不会产生新的this，这边如果不用&#x3D;&gt;,this指代Event</span><br><span class="line">	 &#125;)</span><br><span class="line">	 Event.$on(&#39;data-b&#39;,age &#x3D;&gt; &#123;</span><br><span class="line">	     this.age &#x3D; age;</span><br><span class="line">	 &#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var vm &#x3D; new Vue(&#123;</span><br><span class="line">	el: &#39;#itany&#39;,</span><br><span class="line">	components: &#123;</span><br><span class="line">	  &#39;my-a&#39;: A,</span><br><span class="line">	  &#39;my-b&#39;: B,</span><br><span class="line">	  &#39;my-c&#39;: C</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>$on 监听了自定义事件 data-a 和 data-b，因为有时不确定何时会触发事件，一般会在 mounted 或 created 钩子中来监听。</p>
-<h4 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h4><p><img src="/59/59-2.png" alt="&quot;59-2&quot;"></p>
+<h4 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h4><p><img src="/59/59-2.png"></p>
 <ol>
 <li>简要介绍 Vuex 原理</li>
 </ol>
@@ -388,8 +397,8 @@
       <i class="fa fa-chevron-left"></i> 父子组件生命周期
     </a></div>
       <div class="post-nav-item">
-    <a href="/64/" rel="next" title="Jenkins部署前端项目">
-      Jenkins部署前端项目 <i class="fa fa-chevron-right"></i>
+    <a href="/65/" rel="next" title="实施前端微服务化的六七种方式">
+      实施前端微服务化的六七种方式 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -479,20 +488,23 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+
+<!--
   <div class="cc-license motion-element" itemprop="license">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
+-->
 
 
 
       </div>
 
-      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1384450197&auto=0&height=66"></iframe>
+      <!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1384450197&auto=0&height=66"></iframe>-->
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -510,7 +522,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-address-book"></i>
   </span>
