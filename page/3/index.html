@@ -618,116 +618,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/41/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
-      <meta itemprop="name" content="David Xue">
-      <meta itemprop="description" content="Tough times never last, but tough people do.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="David Xue">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/41/" class="post-title-link" itemprop="url">TCP建立后包含多少HTTP，以及相关衍生的概念</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-17 23:50:36" itemprop="dateCreated datePublished" datetime="2021-08-17T23:50:36+08:00">2021-08-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-02-06 23:17:16" itemprop="dateModified" datetime="2022-02-06T23:17:16+08:00">2022-02-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/41/" class="post-meta-item leancloud_visitors" data-flag-title="TCP建立后包含多少HTTP，以及相关衍生的概念" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/41/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/41/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="TCP建立后包含多少HTTP，以及相关衍生的概念"><a href="#TCP建立后包含多少HTTP，以及相关衍生的概念" class="headerlink" title="TCP建立后包含多少HTTP，以及相关衍生的概念"></a>TCP建立后包含多少HTTP，以及相关衍生的概念</h3><p>一道经典的面试题是从 URL 在浏览器被被输入到页面展现的过程中发生了什么，大多数回答都是说请求响应之后 DOM 怎么被构建，被绘制出来。</p>
-<p>但是你有没有想过，收到的 HTML 如果包含几十个图片标签，这些图片是以什么方式、什么顺序、建立了多少连接、使用什么协议被下载下来的呢？<br>要搞懂这个问题，我们需要先解决下面五个问题：<br>现代浏览器在与服务器建立了一个 TCP 连接后是否会在一个 HTTP 请求完成后断开？什么情况下会断开？</p>
-<p>一个 TCP 连接可以对应几个 HTTP 请求？</p>
-<p>一个 TCP 连接中 HTTP 请求发送可以一起发送么（比如一起发三个请求，再三个响应一起接收）？</p>
-<p>为什么有的时候刷新页面不需要重新建立 SSL 连接？</p>
-<p>浏览器对同一 Host 建立 TCP 连接到数量有没有限制？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/41/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/42/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -848,6 +738,116 @@
 <li>运用webpack：利用node + webpack + webpack-dev-server代理接口跨域。（此方法与Nginx代理跨域原理基本一致，因此建议使用Nginx代理即可。）</li>
 </ul>
 </script></li></ol>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/41/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
+      <meta itemprop="name" content="David Xue">
+      <meta itemprop="description" content="Tough times never last, but tough people do.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="David Xue">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/41/" class="post-title-link" itemprop="url">TCP建立后包含多少HTTP，以及相关衍生的概念</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-17 23:50:36" itemprop="dateCreated datePublished" datetime="2021-08-17T23:50:36+08:00">2021-08-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-06 23:17:16" itemprop="dateModified" datetime="2022-02-06T23:17:16+08:00">2022-02-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/41/" class="post-meta-item leancloud_visitors" data-flag-title="TCP建立后包含多少HTTP，以及相关衍生的概念" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/41/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/41/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="TCP建立后包含多少HTTP，以及相关衍生的概念"><a href="#TCP建立后包含多少HTTP，以及相关衍生的概念" class="headerlink" title="TCP建立后包含多少HTTP，以及相关衍生的概念"></a>TCP建立后包含多少HTTP，以及相关衍生的概念</h3><p>一道经典的面试题是从 URL 在浏览器被被输入到页面展现的过程中发生了什么，大多数回答都是说请求响应之后 DOM 怎么被构建，被绘制出来。</p>
+<p>但是你有没有想过，收到的 HTML 如果包含几十个图片标签，这些图片是以什么方式、什么顺序、建立了多少连接、使用什么协议被下载下来的呢？<br>要搞懂这个问题，我们需要先解决下面五个问题：<br>现代浏览器在与服务器建立了一个 TCP 连接后是否会在一个 HTTP 请求完成后断开？什么情况下会断开？</p>
+<p>一个 TCP 连接可以对应几个 HTTP 请求？</p>
+<p>一个 TCP 连接中 HTTP 请求发送可以一起发送么（比如一起发三个请求，再三个响应一起接收）？</p>
+<p>为什么有的时候刷新页面不需要重新建立 SSL 连接？</p>
+<p>浏览器对同一 Host 建立 TCP 连接到数量有没有限制？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/41/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1396,7 +1396,7 @@
   </div>
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">博客全站共53.7k字</span>
+    <span class="post-count">博客全站共53.9k字</span>
   </div>
 
 
