@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/4/">
+    <link itemprop="mainEntityOfPage" href="https://xdw-h.github.io/39/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.jpg">
@@ -204,7 +204,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/4/" class="post-title-link" itemprop="url">async函数原理及使用方法</a>
+            <a href="/39/" class="post-title-link" itemprop="url">三次握手、四次挥手、websocket连接</a>
         </h2>
 
         <div class="post-meta">
@@ -229,7 +229,7 @@
             </span>
 
           
-            <span id="/4/" class="post-meta-item leancloud_visitors" data-flag-title="async函数原理及使用方法" title="阅读次数">
+            <span id="/39/" class="post-meta-item leancloud_visitors" data-flag-title="三次握手、四次挥手、websocket连接" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -245,8 +245,8 @@
 
       <span class="post-meta-item-text">评论：</span>
     
-    <a title="valine" href="/4/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/4/" itemprop="commentCount"></span>
+    <a title="valine" href="/39/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/39/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -261,12 +261,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="async函数原理及使用方法"><a href="#async函数原理及使用方法" class="headerlink" title="async函数原理及使用方法"></a>async函数原理及使用方法</h3><blockquote>
-<p>async 函数是 Generator 函数的语法糖，async 函数的实现原理，就是将 <a href="/5/" title="Generator函数">Generator函数</a>和自动执行器，包装在一个函数里。</p>
-</blockquote>
+          <h3 id="三次握手、四次挥手、websocket连接"><a href="#三次握手、四次挥手、websocket连接" class="headerlink" title="三次握手、四次挥手、websocket连接"></a>三次握手、四次挥手、websocket连接</h3><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><ol>
+<li>第一次握手：起初两端都处于CLOSED关闭状态，Client将标志位SYN置为1，随机产生一个值seq=x，并将该数据包发送给Server，Client进入SYN-SENT状态，等待Server确认；</li>
+</ol>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/4/#more" rel="contents">
+              <a class="btn" href="/39/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -920,6 +920,8 @@
   }
 </script>
 
+          <!-- calendar widget -->
+          
         </div>
           
   
@@ -989,6 +991,10 @@
 
       <!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1384450197&auto=0&height=66"></iframe>-->
     </div>
+    <!-- CloudCalendar -->
+    <div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+    <div class="widget" id="CloudCalendar"></div>
+    </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
@@ -1018,7 +1024,7 @@
   </div>
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">博客全站共53.9k字</span>
+    <span class="post-count">博客全站共56.5k字</span>
   </div>
 
 
@@ -1058,6 +1064,10 @@
 <script src="/js/next-boot.js"></script>
 
 
+  <script defer src="true"></script>
+    <script defer src="true"></script>
+    <script defer src="true"></script>
+    <script defer src="true"></script>
 
 
   
@@ -1112,6 +1122,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   }, window.Valine);
 });
 </script>
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":250},"mobile":{"show":false},"log":false});</script></body>
 </html>
